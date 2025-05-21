@@ -1,10 +1,12 @@
 ﻿using IamService.Shared.Domain.Repositories;
+using IamService.Shared.Infrastructure.Persistence.EFC.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace IamService.Shared.Infrastructure.Persistence.EFC.Repositories
 {
-    public abstract class BaseRepository<TEntity>(IAMContext context) : IBaseRepository<TEntity> where TEntity : class
+    public abstract class BaseRepository<TEntity>(IamContext context) : IBaseRepository<TEntity> where TEntity : class
     {
-        protected readonly IAMContext Context = context;
+        protected readonly IamContext Context = context;
 
         public async Task AddAsync(TEntity entity) => await Context.Set<TEntity>().AddAsync(entity);
 
