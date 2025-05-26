@@ -188,6 +188,8 @@ builder.Services.AddScoped<ExternalProfilesService>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddScoped<RolesInitializer>();
+
 #endregion
 
 #region JWT Configuration
