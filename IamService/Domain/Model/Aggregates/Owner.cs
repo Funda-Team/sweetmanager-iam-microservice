@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using IamService.Domain.Model.Entities;
+using IamService.Domain.Model.Entities.Roles;
 
 namespace IamService.Domain.Model.Aggregates;
 
@@ -25,4 +25,23 @@ public partial class Owner
     public int? HotelsId { get; set; }
 
     public virtual Role? Roles { get; set; }
+
+    public Owner()
+    {
+
+    }
+
+    public Owner(int id, string username, string email, int rolesId,
+        string name, string surname, int phone, int hotelsId ,string state)
+    {
+        Id = id;
+        Username = username;
+        Email = email;
+        RolesId = rolesId;
+        Name = name;
+        Surname = surname;
+        Phone = phone;
+        HotelsId = hotelsId;
+        State = state;
+    }
 }

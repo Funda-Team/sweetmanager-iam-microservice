@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using IamService.Domain.Model.Aggregates;
 using IamService.Domain.Model.Entities;
+using IamService.Domain.Model.Entities.Roles;
 using Microsoft.EntityFrameworkCore;
 
 namespace IamService.Shared.Infrastructure.Persistence.EFC.Configuration;

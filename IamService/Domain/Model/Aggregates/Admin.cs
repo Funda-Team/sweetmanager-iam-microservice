@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using IamService.Domain.Model.Entities;
+using IamService.Domain.Model.Entities.Roles;
 
 namespace IamService.Domain.Model.Aggregates;
 
@@ -27,4 +28,20 @@ public partial class Admin
     public virtual ICollection<AssignmentWorker> AssignmentWorkers { get; set; } = new List<AssignmentWorker>();
 
     public virtual Role? Roles { get; set; }
+
+    public Admin() { }
+
+    public Admin(int id, string username, string email, int rolesId,
+        string name, string surname, int phone, int hotelsId,string state)
+    {
+        Id = id;
+        Username = username;
+        Email = email;
+        RolesId = rolesId;
+        Name = name;
+        Surname = surname;
+        Phone = phone;
+        HotelsId = hotelsId;
+        State = state;
+    }
 }

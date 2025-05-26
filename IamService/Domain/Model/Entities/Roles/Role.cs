@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using IamService.Domain.Model.Aggregates;
 
-namespace IamService.Domain.Model.Entities;
+namespace IamService.Domain.Model.Entities.Roles;
 
 public partial class Role
 {
@@ -15,4 +15,11 @@ public partial class Role
     public virtual ICollection<Owner> Owners { get; set; } = new List<Owner>();
 
     public virtual ICollection<Worker> Workers { get; set; } = new List<Worker>();
+
+    public Role() { }
+
+    public Role(string name)
+    {
+        Name = name;
+    }
 }
