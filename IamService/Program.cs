@@ -45,6 +45,8 @@ using SweetManagerWebService.IAM.Infrastructure.Tokens.JWT.Services;
 using System.Text;
 using SweetManagerWebService.IAM.Infrastructure.Population.Roles;
 using IamService.Infrastructure.Pipeline.Middleware.Extensions;
+using IamService.Interfaces.ACL;
+using IamService.Interfaces.ACL.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -181,6 +183,8 @@ builder.Services.AddScoped<IWorkerAreaRepository, WorkerAreaRepository>();
 builder.Services.AddScoped<IAssignmentWorkerCommandService, AssignmentWorkerCommandService>();
 builder.Services.AddScoped<IAssignmentWorkerQueryService, AssignmentWorkerQueryService>();
 builder.Services.AddScoped<IAssignmentWorkerRepository, AssignmentWorkerRepository>();
+
+builder.Services.AddScoped<IIamContextFacade, IamContextFacade>();
 
 builder.Services.AddScoped<ExternalMonitoringService>();
 
